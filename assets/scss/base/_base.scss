@@ -1,0 +1,234 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* Reset */
+html,body,h1,h2,h3,h4,h5,h6,div,p,blockquote,pre,code,address,ul,ol,li,nav,section,article,header,footer,main,aside,dl,dt,dd,table,thead,tbody,tfoot,label,caption,th,td,form,fieldset,legend,hr,input,button,textarea,object,figure,figcaption {margin:0;padding:0; font-family: "Noto Sans KR",sans-serif; color: #333;}
+body,input,select,textarea,button,img,fieldset {border:none;}
+ul,ol,li{list-style:none;}
+table{width:100%;border-spacing:0;border-collapse:collapse;}
+address,cite,code,em,i{font-style:normal;font-weight:normal;}
+label,img,input,select,textarea,button,a {vertical-align:middle;}
+u,ins,a{text-decoration:none;}
+button { cursor: pointer;}
+
+/* Normalize */
+body { font-family: 'Noto Sans KR', sans-serif; }
+// select { appearance:none;}
+// select::-ms-expand { display:none;}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { -webkit-appearance:none;}
+input[type="number"]{ -moz-appearance:textfield;}
+input[type="number"],
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="email"],
+input[type="tel"],
+input[type="date"], 
+textarea { -webkit-appearance:none; -moz-appearance:none; appearance:none; -webkit-border-radius:0; outline:0;}
+textarea { resize: none;}
+
+/* Style */
+html { font-size: 16px;}
+body { overflow-x:hidden; font-size: 1rem;}
+body.hidden { position: fixed; overflow-y:hidden;  touch-action: none;}
+main { font-size: 1.4rem; line-height:2.1rem; color:#666; display: block;}
+a, button { color:#666;}
+p, li{word-break: keep-all;}
+
+.clear {clear:both;}
+.clear:after { content:""; display:block; clear:both;}
+caption > div,
+legend,
+.hide {overflow: hidden; display:block; position:absolute; border: 0; width: 1px; height: 1px; clip: rect(1px, 1px, 1px, 1px);}
+
+.skip { position: absolute; left: 0; right: 0; top:-100%; transition: all .5s; line-height: 5rem; background: #000; color:#fff; text-align: center; z-index: 100;}
+.skip:focus { top: 0; }
+
+.hidden, .blind, .hd-element {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: -10000000000000000px;
+  top: -999999px;
+  width: 0;
+  height: 0;
+  font-size: 1px;
+}
+.hide-txt {
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  line-height: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.guide__nav {
+  position: fixed;
+  z-index: 99;
+  overflow: hidden;
+  overflow-y: auto;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
+
+  h1 {
+    background: #f7fafc;
+    padding: 20px 25px;
+    border-bottom: 1px solid #ddd;
+    color: #000;
+    font-size: 20px;
+    letter-spacing: -1px;
+
+    a {
+      display: block;
+      font-family: "Audi";
+      font-weight: 800;
+    }
+  }
+
+  .nav {
+    li {
+      border-bottom: 1px solid #edeff0;
+      list-style: none;
+
+      a {
+        position: relative;
+        font-size: 16px;
+        color: #666;
+        display: block;
+        padding: 15px 35px 15px 25px;
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          width: 8px;
+          height: 8px;
+          border-width: 1px 1px 0 0;
+          border-style: solid;
+          border-color: #999 #999 transparent transparent;
+          transform: rotate(45deg);
+        }
+      }
+
+      li a:after,
+      ul {
+        display: none;
+      }
+
+      li {
+        padding-left: 20px;
+
+        &.on a {
+          font-weight: bold;
+          padding: 10px 35px 10px 20px;
+        }
+
+        a:hover,
+        &.on a:hover {
+          color: #000;
+        }
+      }
+
+      &.on ul {
+        margin-left: 10px;
+        display: block;
+        border-left: 1px dashed #d7d7d7;
+
+        li {
+          border: 0;
+        }
+
+        a {
+          padding: 7px 0;
+          border: 0;
+          font-size: 15px;
+          font-weight: normal;
+          color: #666;
+
+          &:before {
+            content: "- -";
+            color: #d7d7d7;
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            font-size: 11px;
+          }
+
+          &:hover {
+            padding: 7px 0;
+            border: 0;
+            font-weight: normal;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    > li {
+      &.on a {
+        padding-left: 20px;
+        font-weight: bold;
+        color: #000;
+        border-left: 3px solid #ff4b00;
+
+        &:hover {
+          padding-left: 20px;
+          font-weight: bold;
+          color: #000;
+          border-left: 3px solid #ff4b00;
+        }
+      }
+
+      > a:hover {
+        background: #ededed;
+      }
+    }
+  }
+}
+
+.guide__content {
+  min-width: 800px;
+  padding-left: 300px;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 200px;
+}
+
+.guide__title {
+  margin-bottom: 40px;
+  font-size: 34px;
+  color: #111;
+  font-family: "Audi";
+  font-weight: 800;
+
+  &:nth-of-type(n + 2) {
+    margin-top: 80px;
+  }
+}
+
+.guide__title2 {
+  font-family: "Audi", "Noto", sans-serif;
+  padding: 10px;
+  margin-bottom: 30px;
+  background: #f5f5f5;
+  font-size: 20px;
+  color: #111;
+  font-weight: 700;
+
+  &:nth-of-type(n + 2) {
+    margin-top: 40px;
+  }
+}
